@@ -83,20 +83,6 @@ latex_content = """%-------------------------
   \\href{""" + resume["contact"]["linkedin"] + """}{""" + resume["contact"]["linkedin"] + """} & \\\\
 \\end{tabular*}
 
-%-----------EDUCATION-----------------
-\\section{Education}
-  \\resumeSubHeadingListStart
-"""
-
-# Add education entries
-for edu in resume["education"]:
-    latex_content += """    \\resumeSubheading
-      {""" + edu["school"] + """}{""" + edu["location"] + """}
-      {""" + edu["degree"] + """;  GPA: """ + edu["gpa"] + """}{""" + edu["year"] + """}
-"""
-
-latex_content += """  \\resumeSubHeadingListEnd
-
 %-----------EXPERIENCE-----------------
 \\section{Experience}
   \\resumeSubHeadingListStart
@@ -137,6 +123,20 @@ latex_content += """  \\resumeSubHeadingListEnd
 for proj in resume["projects"]:
     latex_content += """    \\resumeSubItem{""" + proj["name"] + """}
       {""" + proj["date"] + """ - """ + ", ".join(proj["details"]) + """}
+"""
+
+latex_content += """  \\resumeSubHeadingListEnd
+
+%-----------EDUCATION-----------------
+\\section{Education}
+  \\resumeSubHeadingListStart
+"""
+
+# Add education entries
+for edu in resume["education"]:
+    latex_content += """    \\resumeSubheading
+      {""" + edu["school"] + """}{""" + edu["location"] + """}
+      {""" + edu["degree"] + """;  GPA: """ + edu["gpa"] + """}{""" + edu["year"] + """}
 """
 
 latex_content += """  \\resumeSubHeadingListEnd
