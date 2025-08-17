@@ -1,4 +1,5 @@
 import json
+import re
 
 # Load JSON resume
 with open("Manith_Luthria_Resume.json", "r") as f:
@@ -79,7 +80,7 @@ latex_content = """%-------------------------
 %----------HEADING-----------------
 \\begin{tabular*}{\\textwidth}{l@{\\extracolsep{\\fill}}r}
   \\textbf{\\Large """ + resume["name"] + """} & Email : \\href{mailto:""" + resume["contact"]["email"] + """}{""" + resume["contact"]["email"] + """}\\\\
-  \\href{""" + resume["contact"]["portfolio"] + """}{""" + resume["contact"]["portfolio"] + """} & Mobile : """ + resume["contact"]["phone"] + """ \\\\
+  \\url{""" + resume["contact"]["portfolio"] + """} & Mobile : """ + resume["contact"]["phone"] + """ \\\\
   \\href{""" + resume["contact"]["linkedin"] + """}{""" + resume["contact"]["linkedin"] + """} & \\\\
 \\end{tabular*}
 
@@ -118,6 +119,54 @@ latex_content += """  \\resumeSubHeadingListEnd
 \\section{Projects}
   \\resumeSubHeadingListStart
 """
+
+# Add experience entries
+for proj in resume["projects"]:
+    latex_content += """
+    \\resumeSubheading
+      {""" + proj["name"] + """}{}
+      {""" + proj["subtitle"] + """}{}
+      \\resumeItemListStart
+"""
+    for detail in proj["details"]:
+        # Split achievement into key and description if possible
+        if ": " in detail:
+            parts = detail.split(": ", 1)
+            key = parts[0]
+            description = parts[1]
+            latex_content += """        \\resumeItem{""" + key + """}
+          {""" + description + """}
+"""
+        else:
+            # If no colon, use the whole achievement as description
+            latex_content += """        \\item\\small{""" + detail + """ \\vspace{-2pt}}
+"""
+    latex_content += """      \\resumeItemListEnd
+"""
+
+# # Add experience entries
+# for proj in resume["projects"]:
+#     latex_content += """
+#     \\resumeSubheading
+#       {""" + proj["name"] + """}       ach = re.escape(ach)
+
+#       \\resumeItemListStart
+# """
+#     for ach in proj["details"]:
+#         # Split achievement into key and description if possible
+#         if ": " in ach:
+#             parts = ach.split(": ", 1)
+#             key = parts[0]
+#             description = parts[1]
+#             latex_content += """        \\resumeItem{""" + key + """}
+#           {""" + description + """}
+# """
+#         else:
+#             # If no colon, use the whole achievement as description
+#             latex_content += """        \\item\\small{""" + ach + """ \\vspace{-2pt}}
+# """
+#     latex_content += """      \\resumeItemListEnd
+# """
 
 # Add projects
 for proj in resume["projects"]:

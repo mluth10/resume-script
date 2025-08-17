@@ -37,7 +37,8 @@
     ],
     "projects": [
         {
-            "name": "Modurnal - Journaling App with AI Mood Insights & Spotify Integration",
+            "name": "Modurnal",
+            "subtitle": "Journaling App with AI Mood Insights & Spotify Integration",
             "date": "May 2025 - Present",
             "details": [
                 "Built journaling app with React Native and TypeScript, focusing on polished UI and performance.",
@@ -63,7 +64,7 @@
             ]
         },
         {
-            "degree": "Bachelors of Science in Engineering - Electrical and Computer Engineering + Computer Science",
+            "degree": "Bachelors of Science (x2)- Electrical and Computer Engineering + Computer Science",
             "school": "Duke University",
             "location": "Durham, NC",
             "year": "2023",
