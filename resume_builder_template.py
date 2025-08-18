@@ -1,10 +1,11 @@
 import json
-import re
+import subprocess
+import os
 
 # Load JSON resume
 with open("Manith_Luthria_Resume.json", "r") as f:
     resume = json.load(f)
-  
+
 def clean_latex(obj):
     """
     Recursively escape only & and % characters in string fields for LaTeX.
@@ -100,6 +101,11 @@ latex_content = """%-------------------------
   \\href{""" + resume["contact"]["linkedin"] + """}{""" + resume["contact"]["linkedin"] + """} & \\\\
 \\end{tabular*}
 
+%-----------SUMMART-----------------
+\\section{Summary}
+
+""" + resume["summary"] + """
+
 %-----------EXPERIENCE-----------------
 \\section{Experience}
   \\resumeSubHeadingListStart
@@ -160,36 +166,6 @@ for proj in resume["projects"]:
     latex_content += """      \\resumeItemListEnd
 """
 
-# # Add experience entries
-# for proj in resume["projects"]:
-#     latex_content += """
-#     \\resumeSubheading
-#       {""" + proj["name"] + """}       ach = re.escape(ach)
-
-#       \\resumeItemListStart
-# """
-#     for ach in proj["details"]:
-#         # Split achievement into key and description if possible
-#         if ": " in ach:
-#             parts = ach.split(": ", 1)
-#             key = parts[0]
-#             description = parts[1]
-#             latex_content += """        \\resumeItem{""" + key + """}
-#           {""" + description + """}
-# """
-#         else:
-#             # If no colon, use the whole achievement as description
-#             latex_content += """        \\item\\small{""" + ach + """ \\vspace{-2pt}}
-# """
-#     latex_content += """      \\resumeItemListEnd
-# """
-
-# Add projects
-for proj in resume["projects"]:
-    latex_content += """    \\resumeSubItem{""" + proj["name"] + """}
-      {""" + proj["date"] + """ - """ + ", ".join(proj["details"]) + """}
-"""
-
 latex_content += """  \\resumeSubHeadingListEnd
 
 %-----------EDUCATION-----------------
@@ -211,8 +187,9 @@ latex_content += """  \\resumeSubHeadingListEnd
  \\resumeSubHeadingListStart
    \\item{
      \\textbf{Languages}{: """ + ", ".join(resume["skills"]["languages"]) + """}
-     \\hfill
-     \\textbf{Technologies}{: """ + ", ".join(resume["skills"]["tools_and_technologies"]) + """}
+   }
+   \\item{
+     \\textbf{Tools and Technologies}{: """ + ", ".join(resume["skills"]["tools_and_technologies"]) + """}
    }
  \\resumeSubHeadingListEnd
 
@@ -224,5 +201,26 @@ latex_content += """  \\resumeSubHeadingListEnd
 with open("Manith_Luthria_Resume_Template.tex", "w") as f:
     f.write(latex_content)
 
-print("LaTeX resume generated successfully based on template!")
-print("To compile to PDF, run: pdflatex Manith_Luthria_Resume_Template.tex")
+print("LaTeX file generated successfully!")
+
+# Compile LaTeX to PDF
+print("Compiling LaTeX to PDF...")
+try:
+    # Run pdflatex to compile the document
+    result = subprocess.run(['pdflatex', '-interaction=nonstopmode', 'Manith_Luthria_Resume_Template.tex'], 
+                          capture_output=True, text=True)
+    
+    if result.returncode == 0:
+        print("PDF generated successfully!")
+        print("Output file: Manith_Luthria_Resume_Template.pdf")
+    else:
+        print("LaTeX compilation failed!")
+        print("Error output:")
+        print(result.stderr)
+        
+except FileNotFoundError:
+    print("pdflatex not found. Please install a LaTeX distribution (like TeX Live or MiKTeX)")
+    print("You can still compile manually by running: pdflatex Manith_Luthria_Resume_Template.tex")
+except Exception as e:
+    print(f"Error during compilation: {e}")
+    print("You can still compile manually by running: pdflatex Manith_Luthria_Resume_Template.tex")
