@@ -97,8 +97,7 @@ latex_content = """%-------------------------
 %----------HEADING-----------------
 \\begin{tabular*}{\\textwidth}{l@{\\extracolsep{\\fill}}r}
   \\textbf{\\Large """ + resume["name"] + """} & Email : \\href{mailto:""" + resume["contact"]["email"] + """}{""" + resume["contact"]["email"] + """}\\\\
-  \\url{""" + resume["contact"]["portfolio"] + """} & Mobile : """ + resume["contact"]["phone"] + """ \\\\
-  \\href{""" + resume["contact"]["linkedin"] + """}{""" + resume["contact"]["linkedin"] + """} & \\\\
+  \\href{""" + resume["contact"]["linkedin"] + """}{""" + resume["contact"]["linkedin"] + """} & Mobile : """ + resume["contact"]["phone"] + """ \\\\
 \\end{tabular*}
 
 %-----------SUMMART-----------------
