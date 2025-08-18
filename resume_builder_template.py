@@ -1,10 +1,28 @@
 import json
 import subprocess
 import os
+import sys
+
+# Get input file from command line argument
+if len(sys.argv) != 2:
+    print("Usage: python resume_builder_template.py <input_json_file>")
+    print("Example: python resume_builder_template.py my_resume.json")
+    sys.exit(1)
+
+input_file = sys.argv[1]
+
+# Check if input file exists
+if not os.path.exists(input_file):
+    print(f"Error: File '{input_file}' not found.")
+    sys.exit(1)
+
+# Get base name without extension for output files
+base_name = os.path.splitext(input_file)[0]
 
 # Load JSON resume
-with open("Manith_Luthria_Resume.json", "r") as f:
+with open(input_file, "r") as f:
     resume = json.load(f)
+
 
 def clean_latex(obj):
     """
@@ -16,14 +34,16 @@ def clean_latex(obj):
         return [clean_latex(item) for item in obj]
     elif isinstance(obj, str):
         # Only escape & and % characters
-        return obj.replace('&', '\\&').replace('%', '\\%')
+        return obj.replace("&", "\\&").replace("%", "\\%")
     else:
         return obj
+
 
 resume = clean_latex(resume)
 
 # Create LaTeX content based on the template
-latex_content = """%-------------------------
+latex_content = (
+    """%-------------------------
 % Resume in Latex
 % Generated from JSON data
 %------------------------
@@ -96,41 +116,76 @@ latex_content = """%-------------------------
 
 %----------HEADING-----------------
 \\begin{tabular*}{\\textwidth}{l@{\\extracolsep{\\fill}}r}
-  \\textbf{\\Large """ + resume["name"] + """} & Email : \\href{mailto:""" + resume["contact"]["email"] + """}{""" + resume["contact"]["email"] + """}\\\\
-  \\href{""" + resume["contact"]["linkedin"] + """}{""" + resume["contact"]["linkedin"] + """} & Mobile : """ + resume["contact"]["phone"] + """ \\\\
+  \\textbf{\\Large """
+    + resume["name"]
+    + """} & Email : \\href{mailto:"""
+    + resume["contact"]["email"]
+    + """}{"""
+    + resume["contact"]["email"]
+    + """}\\\\
+  \\href{"""
+    + resume["contact"]["linkedin"]
+    + """}{"""
+    + resume["contact"]["linkedin"]
+    + """} & Mobile : """
+    + resume["contact"]["phone"]
+    + """ \\\\
 \\end{tabular*}
 
 %-----------SUMMART-----------------
 \\section{Summary}
 
-""" + resume["summary"] + """
+"""
+    + resume["summary"]
+    + """
 
 %-----------EXPERIENCE-----------------
 \\section{Experience}
   \\resumeSubHeadingListStart
 """
+)
 
 # Add experience entries
 for exp in resume["experience"]:
-    latex_content += """
+    latex_content += (
+        """
     \\resumeSubheading
-      {""" + exp["company"] + """}{""" + exp["location"] + """}
-      {""" + exp["title"] + """}{""" + exp["date"] + """}
+      {"""
+        + exp["company"]
+        + """}{"""
+        + exp["location"]
+        + """}
+      {"""
+        + exp["title"]
+        + """}{"""
+        + exp["date"]
+        + """}
       \\resumeItemListStart
 """
+    )
     for ach in exp["achievements"]:
         # Split achievement into key and description if possible
         if ": " in ach:
             parts = ach.split(": ", 1)
             key = parts[0]
             description = parts[1]
-            latex_content += """        \\resumeItem{""" + key + """}
-          {""" + description + """}
+            latex_content += (
+                """        \\resumeItem{"""
+                + key
+                + """}
+          {"""
+                + description
+                + """}
 """
+            )
         else:
             # If no colon, use the whole achievement as description
-            latex_content += """        \\item\\small{""" + ach + """ \\vspace{-2pt}}
+            latex_content += (
+                """        \\item\\small{"""
+                + ach
+                + """ \\vspace{-2pt}}
 """
+            )
     latex_content += """      \\resumeItemListEnd
 """
 
@@ -143,25 +198,41 @@ latex_content += """  \\resumeSubHeadingListEnd
 
 # Add experience entries
 for proj in resume["projects"]:
-    latex_content += """
+    latex_content += (
+        """
     \\resumeSubheading
-      {""" + proj["name"] + """}{}
-      {""" + proj["subtitle"] + """}{}
+      {"""
+        + proj["name"]
+        + """}{}
+      {"""
+        + proj["subtitle"]
+        + """}{}
       \\resumeItemListStart
 """
+    )
     for detail in proj["details"]:
         # Split achievement into key and description if possible
         if ": " in detail:
             parts = detail.split(": ", 1)
             key = parts[0]
             description = parts[1]
-            latex_content += """        \\resumeItem{""" + key + """}
-          {""" + description + """}
+            latex_content += (
+                """        \\resumeItem{"""
+                + key
+                + """}
+          {"""
+                + description
+                + """}
 """
+            )
         else:
             # If no colon, use the whole achievement as description
-            latex_content += """        \\item\\small{""" + detail + """ \\vspace{-2pt}}
+            latex_content += (
+                """        \\item\\small{"""
+                + detail
+                + """ \\vspace{-2pt}}
 """
+            )
     latex_content += """      \\resumeItemListEnd
 """
 
@@ -174,30 +245,48 @@ latex_content += """  \\resumeSubHeadingListEnd
 
 # Add education entries
 for edu in resume["education"]:
-    latex_content += """    \\resumeSubheading
-      {""" + edu["school"] + """}{""" + edu["location"] + """}
-      {""" + edu["degree"] + """;  GPA: """ + edu["gpa"] + """}{""" + edu["year"] + """}
+    latex_content += (
+        """    \\resumeSubheading
+      {"""
+        + edu["school"]
+        + """}{"""
+        + edu["location"]
+        + """}
+      {"""
+        + edu["degree"]
+        + """;  GPA: """
+        + edu["gpa"]
+        + """}{"""
+        + edu["year"]
+        + """}
 """
+    )
 
-latex_content += """  \\resumeSubHeadingListEnd
+latex_content += (
+    """  \\resumeSubHeadingListEnd
 
 %--------PROGRAMMING SKILLS------------
 \\section{Skills}
  \\resumeSubHeadingListStart
    \\item{
-     \\textbf{Languages}{: """ + ", ".join(resume["skills"]["languages"]) + """}
+     \\textbf{Languages}{: """
+    + ", ".join(resume["skills"]["languages"])
+    + """}
    }
    \\item{
-     \\textbf{Tools and Technologies}{: """ + ", ".join(resume["skills"]["tools_and_technologies"]) + """}
+     \\textbf{Tools and Technologies}{: """
+    + ", ".join(resume["skills"]["tools_and_technologies"])
+    + """}
    }
  \\resumeSubHeadingListEnd
 
 %-------------------------------------------
 \\end{document}
 """
+)
 
 # Save LaTeX file
-with open("Manith_Luthria_Resume_Template.tex", "w") as f:
+with open(base_name + "_Template.tex", "w") as f:
     f.write(latex_content)
 
 print("LaTeX file generated successfully!")
@@ -206,20 +295,33 @@ print("LaTeX file generated successfully!")
 print("Compiling LaTeX to PDF...")
 try:
     # Run pdflatex to compile the document
-    result = subprocess.run(['pdflatex', '-interaction=nonstopmode', 'Manith_Luthria_Resume_Template.tex'], 
-                          capture_output=True, text=True)
-    
+    result = subprocess.run(
+        ["pdflatex", "-interaction=nonstopmode", base_name + "_Template.tex"],
+        capture_output=True,
+        text=True,
+    )
+
     if result.returncode == 0:
         print("PDF generated successfully!")
-        print("Output file: Manith_Luthria_Resume_Template.pdf")
+        print("Output file: " + base_name + "_Template.pdf")
     else:
         print("LaTeX compilation failed!")
         print("Error output:")
         print(result.stderr)
-        
+
 except FileNotFoundError:
-    print("pdflatex not found. Please install a LaTeX distribution (like TeX Live or MiKTeX)")
-    print("You can still compile manually by running: pdflatex Manith_Luthria_Resume_Template.tex")
+    print(
+        "pdflatex not found. Please install a LaTeX distribution (like TeX Live or MiKTeX)"
+    )
+    print(
+        "You can still compile manually by running: pdflatex "
+        + base_name
+        + "_Template.tex"
+    )
 except Exception as e:
     print(f"Error during compilation: {e}")
-    print("You can still compile manually by running: pdflatex Manith_Luthria_Resume_Template.tex")
+    print(
+        "You can still compile manually by running: pdflatex "
+        + base_name
+        + "_Template.tex"
+    )
