@@ -1,0 +1,110 @@
+{
+    "name": "Manith Luthria",
+    "contact": {
+        "email": "mluth10@gmail.com",
+        "phone": "7138595238",
+        "linkedin": "https://www.linkedin.com/in/manith-luthria",
+        "portfolio": "https://mluth10.github.io/portfolio_website/"
+    },
+    "summary": "Results-driven software engineer with a Master's in Electrical and Computer Engineering from Duke University. Skilled in building scalable, production-ready web and backend systems in fast-paced environments using React, Python, Java, JavaScript, and SQL. Demonstrates strong engineering aptitude through automation, data-driven app development, and rapid iteration. Experienced in cross-functional collaboration and optimizing systems for efficiency using modern software engineering practices.",
+    "experience": [
+        {
+            "title": "Full Stack Software Engineer",
+            "company": "Texas Instruments",
+            "location": "Dallas, TX",
+            "date": "June 2024 - Present",
+            "achievements": [
+                "Developed 5+ internal web apps using React and SQL, streamlining real-time decision workflows for global manufacturing teams.",
+                "Redesigned frontend architecture of an equipment dashboard used at 100+ sites globally, boosting UI responsiveness by 50%.",
+                "Created full-stack tools that automated manual fab operations, saving ~2 hours per day for production teams.",
+                "Coordinated with 10+ stakeholders to deliver high-impact, data-driven solutions in a dynamic engineering environment.",
+                "Enhanced legacy fab automation tools with modern UI improvements, reducing support tickets by 50% and increasing user satisfaction.",
+                "Engineered visualization tools to deliver critical fab insights for faster, data-based decision making on the manufacturing floor."
+            ]
+        },
+        {
+            "title": "Software Engineer Intern",
+            "company": "Texas Instruments",
+            "location": "Dallas, TX",
+            "date": "June 2023 - August 2023",
+            "achievements": [
+                "Added copy-paste capabilities to PM web app using React and JavaScript, improving technician efficiency and saving over 2 hours daily.",
+                "Implemented backend Java API logic to optimize safe data ingestion and prevent Oracle SQL overflows.",
+                "Developed reporting dashboards for fab applications, reducing report generation time by 50% and improving data accessibility.",
+                "Gained hands-on expertise in a 300mm semiconductor fab, collaborating across engineering disciplines to improve manufacturing outcomes."
+            ]
+        }
+    ],
+    "projects": [
+        {
+            "name": "Modurnal",
+            "subtitle": "Journaling App with AI Mood Insights & Spotify Integration",
+            "date": "May 2025 - Present",
+            "details": [
+                "Built journaling app using React Native and TypeScript with a focus on smooth UI and high performance.",
+                "Integrated AI-powered sentiment analysis via OpenAI API, delivering actionable mood insights for users.",
+                "Developed Spotify integration feature to analyze correlations between music habits and journal activity.",
+                "Designed and secured cloud backend with Supabase and PostgreSQL, leveraging Row-Level Security for robust authentication and efficient data pipelines."
+            ]
+        }
+    ],
+    "education": [
+        {
+            "degree": "Masters of Engineering in Electrical and Computer Engineering",
+            "school": "Duke University",
+            "location": "Durham, NC",
+            "year": "2024",
+            "gpa": "3.85",
+            "relevant_coursework": [
+                "Machine Learning",
+                "Cybersecurity Principles",
+                "Analog Integrated Circuit Design",
+                "Advanced Computer Architecture",
+                "Robotics"
+            ]
+        },
+        {
+            "degree": "Bachelors of Science (x2)- Electrical and Computer Engineering + Computer Science",
+            "school": "Duke University",
+            "location": "Durham, NC",
+            "year": "2023",
+            "gpa": "3.78",
+            "relevant_coursework": [
+                "Data Structures and Algorithms",
+                "Software Development",
+                "Operating Systems",
+                "Network Architecture",
+                "Data Science",
+                "Signals and Systems"
+            ]
+        }
+    ],
+    "skills": {
+        "languages": [
+            "Python",
+            "Java",
+            "SQL",
+            "JavaScript",
+            "TypeScript",
+            "C",
+            "PostgreSQL",
+            "Bash/Shell Scripting"
+        ],
+        "tools_and_technologies": [
+            "React",
+            "Data Analysis",
+            "React Native",
+            "Git",
+            "Spring Boot",
+            "Linux/Unix",
+            "Docker",
+            "REST APIs",
+            "API Design",
+            "CI/CD",
+            "Jenkins",
+            "Maven",
+            "Agile",
+            "AWS"
+        ]
+    }
+}

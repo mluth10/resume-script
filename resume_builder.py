@@ -5,8 +5,8 @@ import sys
 
 # Get input file from command line argument
 if len(sys.argv) != 2:
-    print("Usage: python resume_builder_template.py <input_json_file>")
-    print("Example: python resume_builder_template.py my_resume.json")
+    print("Usage: python resume_builder.py <input_json_file>")
+    print("Example: python resume_builder.py my_resume.json")
     sys.exit(1)
 
 input_file = sys.argv[1]
@@ -286,7 +286,7 @@ latex_content += (
 )
 
 # Save LaTeX file
-with open(base_name + "_Template.tex", "w") as f:
+with open(base_name + ".tex", "w") as f:
     f.write(latex_content)
 
 print("LaTeX file generated successfully!")
@@ -296,14 +296,14 @@ print("Compiling LaTeX to PDF...")
 try:
     # Run pdflatex to compile the document
     result = subprocess.run(
-        ["pdflatex", "-interaction=nonstopmode", base_name + "_Template.tex"],
+        ["pdflatex", "-interaction=nonstopmode", base_name + ".tex"],
         capture_output=True,
         text=True,
     )
 
     if result.returncode == 0:
         print("PDF generated successfully!")
-        print("Output file: " + base_name + "_Template.pdf")
+        print("Output file: " + base_name + ".pdf")
     else:
         print("LaTeX compilation failed!")
         print("Error output:")
@@ -316,12 +316,12 @@ except FileNotFoundError:
     print(
         "You can still compile manually by running: pdflatex "
         + base_name
-        + "_Template.tex"
+        + ".tex"
     )
 except Exception as e:
     print(f"Error during compilation: {e}")
     print(
         "You can still compile manually by running: pdflatex "
         + base_name
-        + "_Template.tex"
+        + ".tex"
     )
