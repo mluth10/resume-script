@@ -4,6 +4,22 @@ import re
 # Load JSON resume
 with open("Manith_Luthria_Resume.json", "r") as f:
     resume = json.load(f)
+  
+def clean_latex(obj):
+    """
+    Recursively escape only & and % characters in string fields for LaTeX.
+    """
+    if isinstance(obj, dict):
+        return {k: clean_latex(v) for k, v in obj.items()}
+    elif isinstance(obj, list):
+        return [clean_latex(item) for item in obj]
+    elif isinstance(obj, str):
+        # Only escape & and % characters
+        return obj.replace('&', '\\&').replace('%', '\\%')
+    else:
+        return obj
+
+resume = clean_latex(resume)
 
 # Create LaTeX content based on the template
 latex_content = """%-------------------------
