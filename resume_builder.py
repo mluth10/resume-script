@@ -19,6 +19,15 @@ if not os.path.exists(input_file):
 # Get base name without extension for output files
 base_name = os.path.splitext(input_file)[0]
 
+# Create output directory on desktop
+resume_path = os.path.expanduser("~/Desktop/resume")
+output_dir = os.path.join(resume_path, base_name)
+
+# Create the directory if it doesn't exist
+if not os.path.exists(output_dir):
+    os.makedirs(output_dir)
+    print(f"Created output directory: {output_dir}")
+
 # Load JSON resume
 with open(input_file, "r") as f:
     resume = json.load(f)
@@ -286,7 +295,8 @@ latex_content += (
 )
 
 # Save LaTeX file
-with open(base_name + ".tex", "w") as f:
+tex_file_path = os.path.join(output_dir, base_name + ".tex")
+with open(tex_file_path, "w") as f:
     f.write(latex_content)
 
 print("LaTeX file generated successfully!")
@@ -294,16 +304,18 @@ print("LaTeX file generated successfully!")
 # Compile LaTeX to PDF
 print("Compiling LaTeX to PDF...")
 try:
-    # Run pdflatex to compile the document
+    # Run pdflatex to compile the document from the output directory
     result = subprocess.run(
         ["pdflatex", "-interaction=nonstopmode", base_name + ".tex"],
         capture_output=True,
         text=True,
+        cwd=output_dir,
     )
 
     if result.returncode == 0:
         print("PDF generated successfully!")
-        print("Output file: " + base_name + ".pdf")
+        pdf_file_path = os.path.join(output_dir, base_name + ".pdf")
+        print("Output file: " + pdf_file_path)
     else:
         print("LaTeX compilation failed!")
         print("Error output:")
@@ -314,14 +326,14 @@ except FileNotFoundError:
         "pdflatex not found. Please install a LaTeX distribution (like TeX Live or MiKTeX)"
     )
     print(
-        "You can still compile manually by running: pdflatex "
+        f"You can still compile manually by running: cd {output_dir} && pdflatex "
         + base_name
         + ".tex"
     )
 except Exception as e:
     print(f"Error during compilation: {e}")
     print(
-        "You can still compile manually by running: pdflatex "
+        f"You can still compile manually by running: cd {output_dir} && pdflatex "
         + base_name
         + ".tex"
     )
