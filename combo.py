@@ -45,6 +45,7 @@ Only output optimized JSON — do not add explanations. Do not add any other tex
 Do not format the json, return the json as a raw string so that json.loads() can be used to parse it.
 Make sure not to make up any information, only modify the resume to match the job description. You can change the ordering and add more detail, but do not claim I did anything I didn't do or have skills I don't have.
 Remember that achievements should start with active verbs like 'Led', 'Built', etc and should show a clear impact, numerically if possible.
+Each experience should never have more then five achievements.
 Remember that you are optimizing for an ATS, so make sure to include the keywords from the job description in the resume in order to achieve 95%+ ATS score.
 DO NOT under any circumstances return anything other than a raw string of JSON.
 
@@ -72,7 +73,7 @@ loading_thread.start()
 
 try:
     response = client.chat.completions.create(
-        model="gpt-4o",  # Or another suitable model
+        model="gpt-4o-mini",  # Cheaper alternative to gpt-4o
         messages=[{"role": "user", "content": prompt}],
         max_tokens=2000  # Adjust as needed
     )
@@ -439,7 +440,7 @@ loading_thread.start()
 
 try:
     response = client.chat.completions.create(
-        model="gpt-4o",
+        model="gpt-4o-mini",
         messages=[{"role": "user", "content": cover_prompt}],
         max_tokens=1000
     )

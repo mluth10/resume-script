@@ -77,7 +77,7 @@ loading_thread.start()
 
 try:
     response = client.chat.completions.create(
-        model="gpt-4o",
+        model="gpt-4o-mini",
         messages=[{"role": "user", "content": cover_prompt}],
         max_tokens=1000
     )
