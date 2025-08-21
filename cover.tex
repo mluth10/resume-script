@@ -1,0 +1,74 @@
+%-------------------------
+% Cover Letter in LaTeX
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{enumitem}
+\usepackage[pdftex]{hyperref}
+\usepackage{fancyhdr}
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.375in}
+\addtolength{\evensidemargin}{-0.375in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+
+%-------------------------
+% Custom commands
+\newcommand{\contactInfo}[4]{
+  \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+    \textbf{\Large #1} & Email: \href{mailto:#2}{#2} \\
+    #3 & Phone: #4 \\
+  \end{tabular*}
+}
+
+%-------------------------------------------
+%%%%%%  COVER LETTER STARTS HERE  %%%%%%%%%%
+\begin{document}
+
+%----------HEADING-----------------
+\contactInfo{Manith Luthria}{mluth10@gmail.com}{LinkedIn: linkedin.com/in/manith-luthria/}{(713) 859-5238}
+
+\vspace{1em}
+
+\today
+
+\vspace{1em}
+
+\vspace{1em}
+
+Dear Hiring Team,
+
+\vspace{1em}
+
+I am writing to express my interest in the [Position Title] role at [Company Name]. With my background in [your field or expertise], I am excited about the opportunity to contribute to your team.
+
+%--- Body Paragraphs ---
+Briefly introduce yourself, mention your relevant experience, and explain why you are a great fit for the position. Highlight key skills or achievements that align with the job description.
+
+%--- Example Paragraph ---
+% I have X years of experience in Y, where I accomplished Z. My skills in A, B, and C make me well-suited for this role.
+
+Thank you for considering my application. I look forward to the opportunity to discuss how my background and skills can contribute to [Company Name]'s continued success.
+
+\vspace{1em}
+
+Sincerely,\\
+Manith
+
+\end{document}

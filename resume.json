@@ -1,0 +1,110 @@
+{
+    "name": "Manith Luthria",
+    "contact": {
+        "email": "mluth10@gmail.com",
+        "phone": "713-859-5238",
+        "linkedin": "https://www.linkedin.com/in/manith-luthria",
+        "portfolio": "https://mluth10.github.io/portfolio_website/"
+    },
+    "summary": "Full-stack engineer with a Master\u2019s in Electrical and Computer Engineering from Duke University and experience building high-performance, data-driven applications using React, JavaScript, Python, Java, and SQL. Skilled in backend development, automation, and rapidly shipping production-grade tools in fast-paced environments. Strong foundation in algorithms, statistics, and computer systems.",
+    "experience": [
+        {
+            "title": "Full Stack Software Engineer",
+            "company": "Texas Instruments",
+            "location": "Dallas, TX",
+            "date": "June 2024 - Present",
+            "achievements": [
+                "Built 5+ internal-facing web apps using React and SQL to streamline real-time decision-making across global manufacturing teams.",
+                "Re-architected the frontend of a real-time equipment dashboard used at 100+ sites, improving UI responsiveness by 50%.",
+                "Delivered full-stack tools that improved fab operations and eliminated ~2 hours/day of manual tasks.",
+                "Collaborated with 10+ stakeholders to scope, design, and ship data-driven solutions in a fast-paced environment.",
+                "Maintained and improved legacy fab automation web tools with jQuery-based UIs, reducing support tickets by 50%.",
+                "Built tools that visualize live fab data and display critical insights for quicker production floor decisions."
+            ]
+        },
+        {
+            "title": "Software Engineer Intern",
+            "company": "Texas Instruments",
+            "location": "Dallas, TX",
+            "date": "June 2023 - August 2023",
+            "achievements": [
+                "Implemented copy-paste functionality in a preventive maintenance (PM) web application using React and JavaScript, saving fab technicians over 2 hours/day.",
+                "Developed backend Java API logic to safely process data insertions, preventing overflows in Oracle SQL database.",
+                "Created reporting dashboards across fab web applications, reducing report preparation time by over 50%.",
+                "Gained hands-on experience in a 300mm semiconductor fab, understanding silicon manufacturing workflows and cross-functional engineering roles."
+            ]
+        }
+    ],
+    "projects": [
+        {
+            "name": "Modurnal",
+            "subtitle": "Journaling App with AI Mood Insights & Spotify Integration",
+            "date": "May 2025 - Present",
+            "details": [
+                "Built journaling app with React Native and TypeScript, focusing on polished UI and performance.",
+                "Integrated OpenAI API for AI-powered sentiment analysis and mood insights.",
+                "Developed Spotify integration to correlate music listening data with journal entries.",
+                "Engineered backend with Supabase and PostgreSQL, using Row-Level Security for secure authentication and data pipelines."
+            ]
+        }
+    ],
+    "education": [
+        {
+            "degree": "Masters of Engineering in Electrical and Computer Engineering",
+            "school": "Duke University",
+            "location": "Durham, NC",
+            "year": "2024",
+            "gpa": "3.85",
+            "relevant_coursework": [
+                "Machine Learning",
+                "Cybersecurity Principles",
+                "Analog Integrated Circuit Design",
+                "Advanced Computer Architecture",
+                "Robotics"
+            ]
+        },
+        {
+            "degree": "Bachelors of Science (x2)- Electrical and Computer Engineering + Computer Science",
+            "school": "Duke University",
+            "location": "Durham, NC",
+            "year": "2023",
+            "gpa": "3.78",
+            "relevant_coursework": [
+                "Data Structures and Algorithms",
+                "Software Development",
+                "Operating Systems",
+                "Network Architecture",
+                "Data Science",
+                "Signals and Systems"
+            ]
+        }
+    ],
+    "skills": {
+        "languages": [
+            "TypeScript",
+            "JavaScript",
+            "Python",
+            "Java",
+            "SQL",
+            "C",
+            "PostgreSQL",
+            "Bash/Shell Scripting"
+        ],
+        "tools_and_technologies": [
+            "React",
+            "Data Analysis",
+            "React Native",
+            "Git",
+            "Spring Boot",
+            "Linux/Unix",
+            "Docker",
+            "REST APIs",
+            "AWS",
+            "API Design",
+            "CI/CD",
+            "Jenkins",
+            "Maven",
+            "Agile"
+        ]
+    }
+}

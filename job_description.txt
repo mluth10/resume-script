@@ -1,0 +1,53 @@
+About GlossGenius
+
+GlossGenius is building an ecosystem enabling entrepreneurs to succeed. We empower small business owners to focus on being creators, not admins, by offering a range of business management tools including booking and scheduling, marketing, analytics, payment processing and much more.
+
+Over 90,000 small business owners have chosen to rely on GlossGenius every day to run their entire set of business operations. Joining its powerful, intuitive platform with its vibrant, distinguished brand, GlossGenius is the ideal combination of a fintech, SMB software, and consumer company all in one.
+
+About the Role
+
+GlossGenius has grown significantly, supporting tens of thousands of customers and seeing billions of transaction volumes on our platforms. As our customers continue to grow their businesses, we want to enable them to be more successful. For that, we’re building AI features that will transform how our customers operate and grow their businesses.
+
+That’s why we are seeking strong Software Engineers, All levels to join one of our Product or Platform-based teams. Product-focused engineers work at the intersection of business needs and technical solutions, solving key customer problems. Platform-focused engineers build scalable, reliable, and extensible systems that empower product teams to move faster, deliver with quality, and focus on customer value.
+
+You must be commutable to our NYC headquarters (Union Square), and will operate in a hybrid environment with 2 days per week in the office (Tuesdays & Thursdays).
+
+What We Work With
+
+We are open to hearing from candidates who know different programming languages and are excited to learn more and grow their skills. Our current stack:
+
+Kotlin (micronaut, jooq), Ruby (Rails, Sidekiq), gRPC, protobuf
+Typescript / Javascript (React, Redux)
+React Native
+AWS, Kubernetes, Postgres, and Terraform
+What You’ll Do
+
+As a Software Engineer at GlossGenius, you'll play a critical role in shaping a platform that powers over 90,000 small businesses and processes more than $3 billion in payments annually. Engineers work on high-impact initiatives that support our rapid growth and evolving scale. Examples of your potential responsibilities include:
+
+Develop, release, and run large-scale web applications that empower beauty and wellness businesses to operate and grow.
+Build new AI features for our customers.
+Develop and define our microservice-based infrastructure.
+Build tools and solutions that enable internal teams to work faster, more effectively, with more confidence, and improve the value they can provide our users (Business Scalability team).
+Work on core experiences such as making payments friction-free for clients and customers, building tools to help customers earn more per hour, or enabling businesses to effortlessly grow and manage their teams.
+Focus on front-end development, crafting intuitive and engaging user experiences for our web and mobile applications.
+Improve performance, reliability, scalability, and security for our backend systems.
+What We’re Looking For
+
+2+ years of professional experience in software development.
+A Bachelor's degree in Computer Science, a related technical field, or equivalent practical experience.
+A strong desire to move fast and have a significant impact.
+An entrepreneurial mindset, eager to take ownership and contribute new ideas to solve challenging problems.
+Ability to analyze and improve efficiency, scalability, and stability of various system resources.
+Demonstrates strong collaboration skills and team spirit.
+Benefits & Perks 
+
+Flexible PTO
+Competitive health & dental insurance options, with premiums partially or fully covered by GG
+In-person opportunities that are designed to help team members foster collaboration and build community (ie; working out of a co-working space, team dinners, and other team building activities)
+Fertility and adoption benefits via Carrot
+Generous, fully-paid parental leave policy
+401k benefit - employees are eligible to contribute starting day 1 of employment
+Professional Development - employees receive a yearly stipend for approved learning and educational-related expenses
+Pre-tax commuter benefits
+Dependent Care FSA
+Home office support
