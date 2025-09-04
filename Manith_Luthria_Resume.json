@@ -12,27 +12,29 @@
             "title": "Full Stack Software Engineer",
             "company": "Texas Instruments",
             "location": "Dallas, TX",
-            "date": "June 2024 - Present",
+            "date": "Summer 2023 + June 2024 - Present",
             "achievements": [
                 "Built 5+ internal-facing web apps using React and SQL to streamline real-time decision-making across global manufacturing teams.",
                 "Re-architected the frontend of a real-time equipment dashboard used at 100+ sites, improving UI responsiveness by 50%.",
                 "Delivered full-stack tools that improved fab operations and eliminated ~2 hours/day of manual tasks.",
                 "Collaborated with 10+ stakeholders to scope, design, and ship data-driven solutions in a fast-paced environment.",
                 "Maintained and improved legacy fab automation web tools with jQuery-based UIs, reducing support tickets by 50%.",
-                "Built tools that visualize live fab data and display critical insights for quicker production floor decisions."
+                "Built tools that visualize live fab data and display critical insights for quicker production floor decisions.",
+                "Created reporting dashboards across fab web applications, reducing report preparation time by over 50%."
             ]
         },
         {
-            "title": "Software Engineer Intern",
-            "company": "Texas Instruments",
-            "location": "Dallas, TX",
-            "date": "June 2023 - August 2023",
+            "title": "Founder & Lead Engineer",
+            "company": "eto",
+            "date": "June 2025 - Present",
             "achievements": [
-                "Implemented copy-paste functionality in a preventive maintenance (PM) web application using React and JavaScript, saving fab technicians over 2 hours/day.",
-                "Developed backend Java API logic to safely process data insertions, preventing overflows in Oracle SQL database.",
-                "Created reporting dashboards across fab web applications, reducing report preparation time by over 50%.",
-                "Gained hands-on experience in a 300mm semiconductor fab, understanding silicon manufacturing workflows and cross-functional engineering roles."
-            ]
+                "Built and launched a full-stack social nutrition app empowering users to set diet goals, log meals, and share progress with friends for motivation and accountability.",
+                "Engineered a secure authentication system using Supabase, Apple OAuth, and JWT for seamless, privacy-first user sign-in.",
+                "Designed and integrated a scalable FastAPI backend with a Supabase PostgreSQL database to support structured tracking of meals, goals, and social interactions.",
+                "Containerized the backend with Docker and deployed to an AWS EC2 instance for scalable, production-grade performance.",
+                "Led end-to-end product development, including feature planning, UX/UI design, API architecture, and App Store deployment readiness.",
+                "Cultivated a user-centered community experience through social visibility, sharing features, and built-in accountability loops."
+                ]
         }
     ],
     "projects": [

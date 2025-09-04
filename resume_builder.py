@@ -20,7 +20,7 @@ if not os.path.exists(input_file):
 base_name = os.path.splitext(input_file)[0]
 
 # Create output directory on desktop
-resume_path = os.path.expanduser("~/Desktop/resume")
+resume_path = os.path.expanduser("./resume")
 output_dir = os.path.join(resume_path, base_name)
 
 # Create the directory if it doesn't exist
@@ -337,3 +337,14 @@ except Exception as e:
         + base_name
         + ".tex"
     )
+
+# Delete all files in the output directory that are not .pdf, .tex, or .json files
+for filename in os.listdir(output_dir):
+    if not (filename.endswith('.pdf') or filename.endswith('.tex') or filename.endswith('.json')):
+        file_path = os.path.join(output_dir, filename)
+        try:
+            if os.path.isfile(file_path):
+                os.remove(file_path)
+                print(f"Deleted: {file_path}")
+        except Exception as e:
+            print(f"Error deleting {file_path}: {e}")
